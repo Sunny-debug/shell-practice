@@ -7,4 +7,7 @@ Name=Sunny
 
 Sum=$(($Number1+$Number2+$Name)) # Arthimetic Expressions Always inside braces 
 
-echo "Sum is :: ${Sum}"
+echo "Sum is :: ${Sum}"  # safe way to use variables
+
+Items=("Earth" "Water" "Fire" "Ash")
+echo "${Items}[*]"
