@@ -29,5 +29,10 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
 
 for package in $@
 do
-    echo "Package is $package"
+    dnf list installed $package -y 
+    if [ $? -ne 0 ]; then
+        dnf install $package
+    else
+        VALIDATE $package   
+    fi
 done    
