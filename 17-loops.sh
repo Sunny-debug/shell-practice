@@ -33,6 +33,6 @@ do
     if [ $? -ne 0 ]; then
         dnf install $package
     else
-        VALIDATE $package   
+        VALIDATE $?
     fi
 done    
