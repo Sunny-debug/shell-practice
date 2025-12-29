@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 USERID=$(id -u)
 R="\e[31m"
@@ -29,11 +30,11 @@ VALIDATE(){ # functions receive inputs through args just like shell script args
 
 for package in $@
 do
-    # Check whether the package is installed 
-    dnf list installed $package -y &>>$LOG_FILE 
+    # Check whether the package is installed
+    dnf list installed $package -y &>>$LOG_FILE
     if [ $? -ne 0 ]; then
         dnf install $package -y &>>$LOG_FILE
     else
         echo -e "$package is already Installed ...$Y SKIPPING $N"
     fi
-done    
+done
