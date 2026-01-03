@@ -3,7 +3,7 @@
 path=$1
 
 if [ $# -eq 0 ]; then
-    echo "Arguments Passed are incorrect"
+    echo "Usage: $0 <file-or-directory-path>" >&2
     exit 1
 elif [ ! -e "$path" ]; then
     echo "Path doesnot exist"
