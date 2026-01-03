@@ -3,8 +3,11 @@
 FILENAME=$1
 
 count(){
+    echo "Words"
     wc -w $FILENAME
+    echo "Lines"
     wc -l $FILENAME
+    echo "Characters"
     wc -c $FILENAME
 }
 
