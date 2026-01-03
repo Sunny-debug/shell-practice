@@ -4,11 +4,11 @@ FILENAME=$1
 
 count(){
     echo "Words"
-    wc -w $FILENAME
+    wc -w $FILENAME | awk '{print $1}'
     echo "Lines"
-    wc -l $FILENAME
+    wc -l $FILENAME | awk '{print $1}'
     echo "Characters"
-    wc -c $FILENAME
+    wc -c $FILENAME | awk '{print $1}'
 }
 
 if [ $# -eq 0 ]; then
