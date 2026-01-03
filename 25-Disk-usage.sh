@@ -2,6 +2,7 @@
 
 DISK_USAGE=$(df -hT | grep -v Filesystem)
 DISK_THRESHOLD=2 
+IP_ADDRESS=$(hostname -i)
 while IFS= read -r line
 do
     USAGE=$(echo $line | awk '{print $6}' | cut -d '%' -f1)
